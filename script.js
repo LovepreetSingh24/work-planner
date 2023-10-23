@@ -2,7 +2,8 @@ function updateTimeBlockColors() {
     $(".time-block").each(function () {
         const timeBlockHourText = $(this).find(".hour").text();
         const timeBlockHour = dayjs(timeBlockHourText, "hA").format("H"); // Convert to 24-hour format
-        const currentHour = dayjs().format("H"); // Get current hour in 24-hour format
+        //const currentHour = dayjs().format("H"); // Get current hour in 24-hour format
+        const currentHour = "15"
     
         if (timeBlockHour < currentHour) {
             $(this).addClass("past").removeClass("present future");
@@ -25,24 +26,6 @@ $(function () {
         localStorage.setItem(timeBlockId, userInput);
         
     });
-
-
-    // const currentHour = dayjs().format("hA");
-    // function updateTimeBlockColors() {
-    //     $(".time-block").each(function () {
-    //         const timeBlockHourText = $(this).find(".hour").text();
-    //         const timeBlockHour = dayjs(timeBlockHourText, "hA").format("H"); // Convert to 24-hour format
-    //         const currentHour = dayjs().format("H"); // Get current hour in 24-hour format
-        
-    //         if (timeBlockHour < currentHour) {
-    //             $(this).addClass("past").removeClass("present future");
-    //         } else if (timeBlockHour == currentHour) {
-    //             $(this).addClass("present").removeClass("past future");
-    //         } else {
-    //             $(this).addClass("future").removeClass("past present");
-    //         }
-    //     });
-    // }
 
     $(".time-block").each(function () {
 
