@@ -1,9 +1,9 @@
 function updateTimeBlockColors() {
+
     $(".time-block").each(function () {
         const timeBlockHourText = $(this).find(".hour").text();
-        const timeBlockHour = dayjs(timeBlockHourText, "hA").format("H"); // Convert to 24-hour format
-        //const currentHour = dayjs().format("H"); // Get current hour in 24-hour format
-        const currentHour = "15"
+        const timeBlockHour = dayjs(timeBlockHourText, "hA").format("H");
+        const currentHour = dayjs().format("H");
     
         if (timeBlockHour < currentHour) {
             $(this).addClass("past").removeClass("present future");
